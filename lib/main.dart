@@ -54,8 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             TextFormField(
               controller: textController,
+              maxLength: 16,
               onChanged: (value) {
-                if (value.length >= 13 && value.length <= 16) {
+                if (value.length >= 13) {
                   final Brand cardBrand = CardBrandChecker.brand(value);
                   setState(() => brand = cardBrand.name);
                 } else {

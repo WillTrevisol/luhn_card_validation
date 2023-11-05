@@ -5,7 +5,7 @@ class CardBrandChecker {
   static Brand brand(String cardNumber) {
     Brand brand = Brand.unknow;
 
-    for (final cardBinMap in cardsBin.entries) {
+    for (final cardBinMap in Bins.values.entries) {
       for (final cardBinSet in cardBinMap.value) {
         final binLenght = cardBinSet.first.toString().length;
         int cardBin = 0;
