@@ -1,6 +1,7 @@
+import 'package:easy_mask/easy_mask.dart';
 import 'package:flutter/material.dart';
-import 'package:luhn_card_validation/brand.dart';
-import 'package:luhn_card_validation/card_brand_checker.dart';
+import 'package:luhn_card_validation/card_validation_result.dart';
+import 'package:luhn_card_validation/card_validator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   final TextEditingController textController = TextEditingController();
-  String brand = '';
+  CardValidationResult? card;
 
   @override
   void dispose() {
@@ -52,20 +53,31 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextFormField(
-              controller: textController,
-              maxLength: 16,
-              onChanged: (value) {
-                if (value.length >= 13) {
-                  final Brand cardBrand = CardBrandChecker.brand(value);
-                  setState(() => brand = cardBrand.name);
-                } else {
-                  setState(() => brand = '');
-                }
-              },
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: TextFormField(
+                controller: textController,
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                inputFormatters: [
+                  TextInputMask(mask: '9999 9999 9999 9999'),
+                ],
+                onChanged: (value) {
+                  if (value.replaceAll(' ', '').length == 16) {
+                    final CardValidationResult cardResult = CardValidator.validate(value);
+                    setState(() => card = cardResult);
+                  } else {
+                    setState(() => card = null);
+                  }
+                },
+              ),
             ),
-            const SizedBox(height: 10),
-            Text(brand),
+            const SizedBox(height: 20),
+            if (card != null) ...{
+              Text('Brand: ${card?.brand.name}'),
+              const SizedBox(height: 10),
+              Text('Luhn Algorithm Valid: ${card?.valid}')
+            }
           ],
         ),
       ),
