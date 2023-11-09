@@ -1,6 +1,6 @@
 # luhn_card_validation
 
-Aplicativo simples para validação de número de cartões com Luhn Alhorithm junto com uma verificação de bandeira.
+Aplicativo simples para validação de número de cartões com Luhn Algorithm junto com uma verificação de bandeira.
 
 <p align="center">
 <img src="assets/readme_file/screen_record.gif" width="300">
