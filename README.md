@@ -1,6 +1,8 @@
 # luhn_card_validation
 
-A new Flutter project.
+Luhn Alhorithm to validate a card number, and simple brand card checker.
+
+<img src="assets/readme_file/screen_record.gif" width="300">
 
 ## Getting Started
 
