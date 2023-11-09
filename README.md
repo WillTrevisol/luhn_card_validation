@@ -1,18 +1,30 @@
 # luhn_card_validation
 
-Luhn Alhorithm to validate a card number, and simple brand card checker.
+Aplicativo simples para validação de número de cartões com Luhn Alhorithm junto com uma verificação de bandeira.
 
+<p align="center">
 <img src="assets/readme_file/screen_record.gif" width="300">
+</p>
 
-## Getting Started
+## :gear: Como utilizar
 
-This project is a starting point for a Flutter application.
+**Step 1:**
 
-A few resources to get you started if this is your first Flutter project:
+Clone o repositório utilizando o comando abaixo:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+git clone https://github.com/WillTrevisol/luhn_card_validation.git
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Step 2:**
+
+Vá para a raiz do projeto e execute os comandos abaixo: 
+
+```
+flutter pub get
+flutter run
+```
+
+## :package: Pacotes e Ferramentas
+
+* [easy_mask]([https://pub.dev/packages/easy_mask](https://github.com/danilocoppi/flutter-textfield-mask))
