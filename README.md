@@ -27,4 +27,4 @@ flutter run
 
 ## :package: Pacotes e Ferramentas
 
-* [easy_mask]([https://pub.dev/packages/easy_mask](https://github.com/danilocoppi/flutter-textfield-mask))
+* [easy_mask](https://pub.dev/packages/easy_mask)
